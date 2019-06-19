@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/RocktimRajkumar/Inbox#readme",
   "dependencies": {
-    "solc": "^0.5.9"
+    "solc": "^0.4.25"
   }
 }
