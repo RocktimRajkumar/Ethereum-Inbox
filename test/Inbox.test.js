@@ -4,7 +4,7 @@ const Web3 = require('web3');
 const OPTIONS = {
     defaultBlock: "latest",
     transactionConfirmationBlocks: 1,
-    transactionBlockTimeout: 5
+    transactionBlockTimeout: 8
 }
 const web3 = new Web3(ganache.provider(), null, OPTIONS);
 const { interface, bytecode } = require('../compile');
@@ -27,10 +27,18 @@ describe('Inbox', () => {
     it('deploys a contract', () => {
         assert.ok(inbox.options.address);
     });
+
     it('contract has default msg', async () => {
         const message = await inbox.methods.message().call();
         assert.equal(message, initalString);
     });
+
+    it('msg modified', async () => {
+        await inbox.methods.setMessage('Alrighty').send({ from: accounts[0] });
+        const message = await inbox.methods.message().call();
+        assert.equal(message, 'Alrighty');
+    });
+
 });
 
 /*class Car {
