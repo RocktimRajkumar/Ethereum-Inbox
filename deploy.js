@@ -3,14 +3,16 @@ const HDWalletProvider = require("truffle-hdwallet-provider");
 const Web3 = require('web3');
 const { interface, bytecode } = require('./compile');
 
+require('dotenv').config();
+
 const OPTIONS = {
     defaultBlock: "latest",
     transactionConfirmationBlocks: 1,
     transactionBlockTimeout: 8
 }
 const provider = new HDWalletProvider(
-    'village author point best ocean swallow weird brown ability misery mercy young',
-    'https://rinkeby.infura.io/v3/01183f6b6e8d4aaf8aa97136aded1264'
+    process.env.mnemonic,
+    process.env.link
 );
 
 const web3 = new Web3(provider, null, OPTIONS);

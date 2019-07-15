@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/RocktimRajkumar/Inbox#readme",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "ganache-cli": "^6.4.4",
     "mocha": "^6.1.4",
     "solc": "^0.4.26",
