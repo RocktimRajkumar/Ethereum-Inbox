@@ -10,7 +10,7 @@ Building a simple  **Ethereum Contracts** and deploying it to a **Rinkeby** test
  5. Create .env file in root directory and add these line to it.
 	 
 
-	> mnemonic = 'Your mnemonic code'
+	> mnemonic = 'Your mnemonic code' <br>
 	link = 'Your infura end point link '
 
  
